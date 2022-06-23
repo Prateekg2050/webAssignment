@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button onclick="myfunc()">Book flight</button>
+    <h1 id="res1"></h1>
+
+    <button onclick="">book hotel</button>
+    <h1 id="res2"></h1>
+
+    <script>
+             let myfunc=()=>{
+            myflight("book flight").then(
+            (func)=>{
+                console.log("Flight booked !");
+                func("book hotel")
+.then((res)=>{console.log(res)})
+                .catch((err)=>{console.log(err)})
+            }
+        ).catch((err)=>{console.log(err)})
+        }
+
+
+
+        let myflight=(x)=>{
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{if(x=="book flight")resolve(myhotel)
+                else reject("flight not booked !")},5000)
+                
+            })
+        }
+
+        let myhotel=(x)=>{
+
+            return new Promise((resolve,reject)=>{
+                   if(x=="book hotel") resolve("Hotel Booked !")
+                    else reject("Hotel not booked !")
+            })
+        }
+   
+
+        
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="val1" placeholder="Enter first number" value="">
+    <input type="number" id="val2" placeholder="Enter second number" value="">
+    <button onclick="myfunc()">Submit</button>
+    
+    <script>
+
+        let myfunc=()=>{
+
+            var a = parseInt(document.getElementById("val1").value);
+            var b = parseInt(document.getElementById("val2").value);
+        
+            let func=(key)=>{
+
+                        return new Promise((resolve,reject)=>{
+                            setTimeout(() => {
+                                switch (key) {
+                                case '+': resolve(a+b);
+                                    break;
+                                case '-': resolve(a-b);
+                                    break;
+                                case "*": resolve(a*b);
+                                    break;
+                                case "/": resolve(a/b);
+                                default:
+                                    reject(console.log("error"))
+                                    break;
+                            }
+                            }, 1000);
+                        })
+                    }
+
+                   let newFunc=async(key)=>{
+            const add=await func("+");
+     
+            document.write(add+"</br>");
+            const sub=await func("-");
+        
+            document.write(sub+"</br>");
+            const mul=await func("*");
+        
+            document.write(mul+"</br>");
+            const div=await func("/");
+         
+            document.write(div+"</br>");
+                } 
+
+                newFunc()
+        }
+        
+        
+        
+    </script>
+</body>
+</html>
