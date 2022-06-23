@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style=" display: flex; flex-direction: row; justify-content: center; ">insert a string within a string at a particular position</h1>
+
+    <div style=" display: flex; flex-direction: column; justify-content: center; ">
+        <input id="val1" type="text" placeholder="Enter Base String" value="" style="margin-top: 10px;margin-bottom: 10px;">
+        <input id="val2" type="text" placeholder="Enter string to insert" value="" style="margin-top: 10px;margin-bottom: 10px;">
+        <input id="val3" type="number" placeholder="Enter valid position" value="" style="margin-top: 10px;margin-bottom: 10px;">
+        <button onclick="myfunc()" style="margin-top: 10px;margin-bottom: 10px;"> Submit </button>
+    </div>
+    <h2 id="res1" style=" display: flex; flex-direction: row; justify-content: center; "></h2>
+    <script>
+        function myfunc()
+        {
+            var x = document.getElementById("val1").value;
+            var y = document.getElementById("val2").value;
+            var z = document.getElementById("val3").value;
+            let text;
+
+            text = x.slice(0,z-1)+" "+y+" "+x.slice(z-1,x.length);
+
+            document.getElementById("res1").innerHTML="String:-"+text;
+        }
+    </script>
+</body>
+</html>

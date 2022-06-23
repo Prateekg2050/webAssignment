@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Program 4</h1>
+    <form action="" onsubmit=" return false" style=" display: flex; flex-direction: column; width: 20%; ">
+        <input id="val1" type="text" placeholder="Enter array of String (eg- is,for,this)" value="" style="margin-top: 10px;margin-bottom: 10px;" >
+        <button onclick="myfunc()" style="margin-top: 10px;margin-bottom: 10px;"> Submit </button>
+    </form>
+    <h1 id="res" style=" display: flex; flex-direction: row; justify-content: center; color: grey; "></h1>
+    <script>
+        let myfunc = () =>
+        {
+            const array = document.getElementById("val1").value.split(",");
+
+            var x = prompt("Enter length of strings");
+            var y = parseInt(x);
+            const newArray=[];
+            let func1=(item)=>{
+    
+                if(item.length == y)
+                {
+                    newArray.push(item);
+                }
+            }
+
+            array.map(func1);
+            document.getElementById("res").innerHTML = "Array ;-"+newArray;
+
+            
+        }    
+
+    </script>
+</body>
+</html>

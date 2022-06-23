@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>check leap year</h1>
+
+    <form action="" onsubmit=" return false" style=" display: flex; flex-direction: column; width: 20%; ">
+        <input id="val1" type="number" placeholder="Enter array(eg- 1,2,3)" value="" style="margin-top: 10px;margin-bottom: 10px;" >
+        <button onclick="checkLeapYear()" style="margin-top: 10px;margin-bottom: 10px;"> Submit </button>
+    </form>
+
+
+    <h1 id="res1" style=" display: flex; flex-direction: row; justify-content: center; color: grey; "></h1>
+
+    <script>
+         function checkLeapYear() {
+
+            var year = document.getElementById("val1").value;
+            year = parseInt(year);
+
+        //three conditions to find out the leap year
+        if ((0 == year % 4) && (0 != year % 100) || (0 == year % 400)) {
+
+            document.getElementById("res1").innerHTML="it is leap year";
+        } else {
+            document.getElementById("res1").innerHTML="it is not leap year";
+        }
+        }
+    </script>
+</body>
+</html>

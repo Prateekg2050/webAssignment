@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    
+<body>
+    <h1 style=" display: flex; flex-direction: row; justify-content: center; ">Pattern</h1>
+    <div style=" display: flex; flex-direction: row; justify-content: center; ">
+       
+        <form action="" onsubmit=" return false" style=" display: flex; flex-direction: column; width: 20%; ">
+            <input id="val1" type="number" placeholder="Enter first number" value="" style="margin-top: 10px;margin-bottom: 10px;" >
+            <button onclick="myfunc()" style="margin-top: 10px;margin-bottom: 10px;"> Submit </button>
+        </form>
+    </div>
+    <h2 id="res" style=" display: flex; flex-direction: row; justify-content: center; color: grey; "></h2>
+    <script>
+         function myfunc()
+        {
+            var x = document.getElementById("val1").value;
+            var arr = new Array(x);
+            var s = "";
+            var s1 = [];
+            for(var i=1;i<=x;i++)
+            {  
+                s = s + i.toString();
+                s1[i-1] = s+ "<br>";
+            }
+
+            s1 = s1.join("")
+            document.getElementById("res").innerHTML = "pattern :- " + s1;
+
+            
+        }
+    </script>
+</body>
+</html>

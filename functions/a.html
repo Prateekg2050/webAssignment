@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style=" display: flex; flex-direction: row; justify-content: center; ">capatalize first letter of each word</h1>
+    <div style=" display: flex; flex-direction: row; justify-content: center; ">
+    <div style=" display: flex; flex-direction: column; width: 20%; ">
+        <input id="val1" placeholder="Enter the string" type="text" value=""style="margin-top: 10px;margin-bottom: 10px;">
+    <button onclick="myfunc()" style="margin-top: 10px;margin-bottom: 10px;"> Submit </button>
+    </div>
+    </div>
+    <h2 id="res1"  style=" display: flex; flex-direction: row; justify-content: center; "></h2>
+    
+<script>
+    function myfunc()
+    {
+        var x = document.getElementById("val1").value.split(" ");
+        let text="";
+        for (let i = 0; i < x.length; i++) {
+         text += (x[i]).charAt(0).toUpperCase()+x[i].slice(1,x[i].length) + " ";
+        }
+        document.getElementById("res1").innerHTML="String:-" + text;
+
+    }
+</script>
+</body>
+</html>

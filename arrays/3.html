@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Enter the array(eg:-1,2,3,4 with given sapces)</h1>
+
+    <div>
+        <input id="val1" type="text" placeholder="Enter number array" value="">
+        <input id="val2" type="number" placeholder="Enter postion" value="">
+        <input id="val3" type="number" placeholder="Enter value" value="">
+        <button onclick="myfunc()">submit</button>
+        <h2 id="res1"></h2>
+    </div>
+
+    <script>
+        function myfunc()
+        {
+            var x = document.getElementById("val1").value.split(" ");
+            var y = document.getElementById("val2").value;
+            var z = document.getElementById("val3").value;
+            var temp1 = x.slice(0,y);
+            temp1.push(z);
+            temp1.push(x.slice(y,x.length));
+            console.log("h");
+            document.getElementById("res1").innerHTML="new array:-"+temp1;
+
+        }
+    </script>
+</body>
+</html>

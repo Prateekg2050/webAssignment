@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Check pallindrome</h1>
+
+    <form action="" onsubmit=" return false" style=" display: flex; flex-direction: column; width: 20%; ">
+        <input id="val1" type="text" placeholder="Enter String" value="" style="margin-top: 10px;margin-bottom: 10px;" >
+        <button onclick="myfunc()" style="margin-top: 10px;margin-bottom: 10px;"> Submit </button>
+    </form>
+    <h1 id="res"></h1>
+    <script>
+        let myfunc = () =>
+        {
+            var x = document.getElementById("val1").value;
+
+            let check=(x)=>
+            {
+                for(var i=0;i<x.length/2;i++)
+                {
+                    if(x[i] === x[x.length-1 - i])
+                    {
+                        continue;
+                    }else
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            check(x)?document.getElementById("res").innerHTML = "True":document.getElementById("res").innerHTML = "False";
+
+            
+        }    
+    </script>
+</body>
+</html>

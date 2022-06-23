@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Split array in two parts</h1>
+
+    <form action="" onsubmit=" return false" style=" display: flex; flex-direction: column; width: 20%; ">
+        <input id="val1" type="text" placeholder="Enter array(eg- 1,2,3)" value="" style="margin-top: 10px;margin-bottom: 10px;" >
+        <button onclick="myfunc()" style="margin-top: 10px;margin-bottom: 10px;"> Submit </button>
+    </form>
+
+
+    <h1 id="res1" style=" display: flex; flex-direction: row; justify-content: center; color: grey; "></h1>
+    <h1 id="res2" style=" display: flex; flex-direction: row; justify-content: center; color: grey; "> </h1>
+    <script>
+         function myfunc()
+        {
+            const array = document.getElementById("val1").value.split(",");
+            console.log(array);
+            var s = array.length;
+            const array1 = array.slice(0,s/2);
+            const array2 = array.slice(s/2,s);
+        //    var sum =  z === "sum" ?parseInt(x)+parseInt(y): z === "sub"?parseInt(x)-parseInt(y): z === "mul"?parseInt(x)*parseInt(y): z === "divi"?parseInt(x)/parseInt(y):-1; 
+
+        document.getElementById("res1").innerHTML = "Array 1 :- " + array1;
+        document.getElementById("res2").innerHTML = "Array 2 :- " + array2;
+        }    
+    </script>
+</body>
+</html>
