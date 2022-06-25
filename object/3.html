@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button onclick="cat.pet()">pet</button>
+    <button onclick="cat.feed()">Feed</button>
+    <button onclick="cat.sleep()">sleep</button>
+    <button onclick="show()">Status</button>
+    
+    <h1 id="res1"></h1>
+    <script>
+       
+        let cat={
+            tiredness:0,
+            hunger:0,
+            lonliness:0,
+            happiness:0,
+
+            pet: function(){ this.hunger += 1; this.happiness++} ,
+            sleep: function(){this.tiredness -= 1;this.hunger += 1;this.lonliness +=1;},
+            feed: function(){this.hunger -=1;this.tiredness +=1;}
+
+        }
+
+        let show=()=>{
+            let arr = [];
+            let i=0;
+            for(let ele in cat)
+            {
+                if(i<4)
+                {
+
+                    {arr.push(`${ele}:${cat[ele]}`)};
+                    i++;
+                }
+                
+            }
+           
+            document.getElementById("res1").innerHTML=arr.join("</br>");
+
+        }
+     
+
+    </script>
+</body>
+</html>
